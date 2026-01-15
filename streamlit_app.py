@@ -13,7 +13,7 @@ def init_connection() -> Client:
     return create_client(SUPABASE_URL, SUPABASE_KEY)
 
 supabase = init_connection()
-
+nowa_kat = str(nowa_kat)
 # --- 2. LOGIKA BIZNESOWA (FUNKCJE) ---
 
 def pobierz_kategorie():
