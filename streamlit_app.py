@@ -13,7 +13,7 @@ def init_connection() -> Client:
     return create_client(SUPABASE_URL, SUPABASE_KEY)
 
 supabase = init_connection()
-nowa_kat = str(nowa_kat)
+
 # --- 2. LOGIKA BIZNESOWA (FUNKCJE) ---
 
 def pobierz_kategorie():
@@ -122,7 +122,8 @@ elif strona == "Kategorie":
     st.title("📂 Kategorie")
     
     col_a, col_b = st.columns([1, 2])
-    
+
+    nowa_kat = str(nowa_kat)
     with col_a:
         st.subheader("Dodaj kategorię")
         nowa_kat = st.text_input("Nazwa nowej kategorii")
