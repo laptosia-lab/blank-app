@@ -123,7 +123,6 @@ elif strona == "Kategorie":
     
     col_a, col_b = st.columns([1, 2])
 
-    nowa_kat = str(nowa_kat)
     with col_a:
         st.subheader("Dodaj kategorię")
         nowa_kat = st.text_input("Nazwa nowej kategorii")
