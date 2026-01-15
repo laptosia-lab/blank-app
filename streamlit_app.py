@@ -128,7 +128,7 @@ elif strona == "Kategorie":
         nowa_kat = st.text_input("Nazwa nowej kategorii")
         if st.button("Dodaj"):
             if nowa_kat:
-                supabase.table("Kategorie").insert({"nazwa_kategorii": nowa_kat}).execute()
+                supabase.table('"Kategorie"').insert({"nazwa_kategorii": nowa_kat}).execute()
                 st.success("Dodano!")
                 st.rerun()
                 
