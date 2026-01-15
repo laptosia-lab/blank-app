@@ -66,6 +66,16 @@ if strona == "Dashboard":
     else:
         st.warning("Baza danych jest pusta. Przejdź do zakładki Zarządzanie, aby dodać towar.")
 
+  try:
+    # Podstaw pod 'opis' cokolwiek, żeby sprawdzić czy to nie brak danych blokuje zapis
+    res = supabase.table("Kategorie").insert({
+        "nazwa_kategorii": str(nowa_kat), 
+        "opis": "testowy opis"
+    }).execute()
+    st.write("Sukces:", res)
+  except Exception as e:
+    st.error(f"Dokładna treść błędu: {e}")
+
 # --- STRONA: ZARZĄDZANIE PRODUKTAMI ---
 elif strona == "Zarządzanie Produktami":
     st.title("📦 Produkty")
